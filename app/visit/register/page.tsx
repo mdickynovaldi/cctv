@@ -217,12 +217,23 @@ export default function VisitRegisterPage() {
 
           {/* STEP 2: Face Capture */}
           {step === 'face' && createdVisit && (
-            <FaceCaptureStep
-              visitId={createdVisit.visit_id}
-              visitorName={createdVisit.visitor_name}
-              onComplete={handleFaceComplete}
-              onSkip={handleFaceSkip}
-            />
+            <div className="space-y-6">
+              <FaceCaptureStep
+                visitId={createdVisit.visit_id}
+                visitorName={createdVisit.visitor_name}
+                onComplete={handleFaceComplete}
+                onSkip={handleFaceSkip}
+              />
+              <div className="pt-4 border-t border-slate-800 flex justify-center">
+                <Button 
+                  onClick={handleFaceSkip}
+                  variant="ghost" 
+                  className="w-full text-slate-400 hover:text-white hover:bg-slate-800"
+                >
+                  Lewati Scan Wajah & Buka QR Code
+                </Button>
+              </div>
+            </div>
           )}
         </CardContent>
       </Card>
